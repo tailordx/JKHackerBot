@@ -1,3 +1,4 @@
 # JKHackerBot
-Telegram bot for taking the water usage readings
-something here
+Телеграм-бот для сбора показаний счётчиков.
+
+Написан на aiogram, сохраняет данные в SQLite.
