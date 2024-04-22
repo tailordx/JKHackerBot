@@ -42,7 +42,7 @@ async def submit_handler(message: Message, state: FSMContext):
     await message.answer(text=reply)
 
 
-@router.message(~StateFilter(default_state), F.text.in_({'cancel', LEXICON['cancel']}))
+@router.message(~StateFilter(default_state), Command('cancel') or F.text == LEXICON['cancel'])
 async def cancel_handler(message: Message, state: FSMContext):
     await message.answer(text=LEXICON['submission_cancel'], reply_markup=ReplyKeyboardRemove())
     await state.clear()
